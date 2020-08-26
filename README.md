@@ -38,3 +38,4 @@ To evaluate the model on the evaluation set, run:
 ```
 python test.py --u_net --cuda
 ```
+We provide pre-trained weights of the U-Net generator and PatchGAN discriminators in the model directory.
