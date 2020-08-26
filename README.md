@@ -42,6 +42,6 @@ Images to be traslated should be stored in the datasets/NIRI_to_NIRII/val/A dire
 
 
 ## Acknowledgements
-The implementation was inspired by the following implementations in PyTorch: [CycleGAN!](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [CycleGAN!](https://github.com/aitorzip/PyTorch-CycleGAN).
+The implementation was inspired by the following implementations in PyTorch: [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [CycleGAN](https://github.com/aitorzip/PyTorch-CycleGAN).
 
 
