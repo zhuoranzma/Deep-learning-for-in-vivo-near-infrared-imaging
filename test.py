@@ -19,14 +19,15 @@ def get_opt():
     parser.add_argument('--u_net', action='store_true', help='use U-net generator')
 
     # Model parameters
-    parser.add_argument('--size', type=int, default=256, help='size of the image')
+    parser.add_argument('--sizeh', type=int, default=512, help='size of the image')
+    parser.add_argument('--sizew', type=int, default=640, help='size of the image')
     parser.add_argument('--input_nc', type=int, default=1, help='number of input channels')
     parser.add_argument('--output_nc', type=int, default=1, help='number of output channels')
     parser.add_argument('--ngf', type=int, default=64, help='number of filters in the generator')
     parser.add_argument('--ndf', type=int, default=64, help='number of filters in the discriminator')
     parser.add_argument('--dropout', type=bool, default=False, help='whether to use dropout')
     parser.add_argument('--n_res', type=int, default=9, help='number of resNet blocks')
-    parser.add_argument('--net_GA', type=str, default='output/netG_A.pth', help='path of the parameters of the generator A')
+    parser.add_argument('--net_GA', type=str, default='model/netG_A.pth', help='path of the parameters of the generator A')
 
     opt = parser.parse_args()
     return opt
@@ -34,8 +35,6 @@ def get_opt():
 
 def main():
     opt = get_opt()
-    if torch.cuda.is_available() and not opt.cuda:
-        print("Cuda device is available, test with --cuda")
 
     # Define the Generators, only G_A is used for testing
     netG_A = networks.Generator(opt.input_nc, opt.output_nc, opt.ngf, opt.n_res, opt.dropout)
@@ -50,7 +49,7 @@ def main():
     netG_A.load_state_dict(torch.load(opt.net_GA))
 
     # Load the data
-    transform = transforms.Compose([transforms.Resize((opt.size, opt.size)),
+    transform = transforms.Compose([transforms.Resize((opt.sizeh, opt.sizew)),
                                     transforms.ToTensor(),
                                     transforms.Normalize((0.5,), (0.5,))])
     dataloader = DataLoader(ImageDataset(opt.rootdir, transform=transform, mode='val'), batch_size=opt.batch_size,
