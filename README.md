@@ -9,4 +9,32 @@ We trained artificial neural networks to transform a fluorescence image in the s
 CycleGAN:  
 ![image of CycleGAN](https://github.com/zhuoranzma/Deep-learning-for-in-vivo-near-infrared-imaging/blob/master/figs/CycleGAN.png) 
 pix2pix:  
-![image of pix2pix](https://github.com/zhuoranzma/Deep-learning-for-in-vivo-near-infrared-imaging/blob/master/figs/pix2pix.png)
+![image of pix2pix](https://github.com/zhuoranzma/Deep-learning-for-in-vivo-near-infrared-imaging/blob/master/figs/pix2pix.png)  
+
+
+## Dataset
+Structure of the dataset:  
+```
+datasets/  
+    NIRI_to_NIRII/  
+        train/  
+            A  
+            B  
+        val/  
+            A  
+            B  
+```
+A and B contain NIR-I and NIR-IIb images, respectively. To train the model, put images in the train directory. To test the model, put the images in the val directory.  
+
+## Train the model
+To train the CycleGAN model, run:  
+```
+python train.py --u_net --cuda
+```
+parameters will be saved in the model directory
+
+## Test the model
+To evaluate the model on the evaluation set, run:
+```
+python test.py --u_net --cuda
+```
