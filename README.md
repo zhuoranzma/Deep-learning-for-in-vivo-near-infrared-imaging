@@ -25,7 +25,7 @@ datasets/
             B  
 ```
 A and B contain NIR-I and NIR-IIb images, respectively. To train the model, put images in the train directory. To test the model, put the images in the val directory.  
-The original images we used to train the CycleGAN model can be downloaded from datasets.zip.
+The original wide-field images we used to train the CycleGAN model can be downloaded from datasets.zip. The original light-sheet microscope images we used to train the pix2pix model can be downloaded from lsm_datasets.zip.
 
 ## Train the model
 To train the CycleGAN model, run:  
