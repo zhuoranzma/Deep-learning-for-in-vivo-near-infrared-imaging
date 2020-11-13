@@ -13,7 +13,7 @@ If you already have pytorch and other packages shown in the environment.yml inst
 (3) Install Anaconda (https://www.anaconda.com/products/individual#macos)    
 (4) Create a virtual environment by running 'conda env create -f environment.yml' in the command line.      
 (5) Activate the virtural environment by running 'conda activate nir'    
-(6) Install PyTorch (https://pytorch.org/) by running a command based on your system. 
+(6) Install PyTorch (https://pytorch.org/) by running a command based on your system.     
 (7) Run the code (see "Test the model" for details)
 
 ## Model Architecture
