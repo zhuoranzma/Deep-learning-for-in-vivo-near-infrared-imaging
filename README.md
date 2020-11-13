@@ -8,7 +8,7 @@ We trained artificial neural networks to transform a fluorescence image in the s
 ## Instructions
 A NIR-I/NIR-IIa fluorescence image can be transformed to a NIR-IIb-like image in the following steps:    
 (1) Download the following files and directories from this repository: datasets, generated_image, model directories and all the .py files    
-(2) Move the NIR-I/NIR-IIa images to datasets/NIRI_to_NIRII/val/A. The whole-body images we used for training is 640*512 8-bit grayscale images in png format. You might need to resize and crop the images before running the code.    
+(2) Move the NIR-I/NIR-IIa images to datasets/NIRI_to_NIRII/val/A. The whole-body images we used for training are 640*512 8-bit grayscale images in png format. You might need to resize and crop the images before running the code.    
 (3) Install Anaconda (https://www.anaconda.com/products/individual#macos)    
 (4) Create a virtual environment by running conda env create -f environment.yml in the command line.    
 (5) Activate the virtural environment, and run the code (see "Test the model" for details)
