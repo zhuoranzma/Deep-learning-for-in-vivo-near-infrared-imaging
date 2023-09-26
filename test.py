@@ -56,7 +56,7 @@ def main():
                             shuffle=False, num_workers=opt.n_cpu)
 
     Tensor = torch.cuda.FloatTensor if opt.cuda else torch.Tensor
-    input_A = Tensor(opt.batch_size, opt.input_nc, opt.size, opt.size)
+    input_A = Tensor(opt.batch_size, opt.input_nc, opt.sizeh, opt.sizew)
 
     for i, batch in enumerate(dataloader):
         name, image = batch
